@@ -1,0 +1,29 @@
+<div>
+  <div *ngIf="isLoadingResults">
+    Carregando...
+  </div>
+
+  <div >
+    <button [routerLink]="['/product-add']">Adicionar</button>
+  </div>
+
+<br/>
+
+  <div>
+    <table border="2">
+        <tr>
+            <th>Nome</th>
+            <th>Preco</th>
+            <th>Acao</th>
+        </tr>
+
+        <ng-container  *ngFor="let item of produtos; let i = index">
+            <tr>   
+                <td>{{ item.nome }}</td>
+                <td>{{ item.preco }}</td>
+                <td><button [routerLink]="['/product-details/'+item.id]">Detalhes</button></td>
+            </tr>      
+        </ng-container>
+    </table>
+  </div>
+</div>

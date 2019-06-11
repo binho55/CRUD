@@ -1,0 +1,18 @@
+<div>
+  <div *ngIf="isLoadingResults">
+    Carregando...
+  </div>
+  <div>
+    <button [routerLink]="['/products']">Voltar</button>
+  </div>
+  <br/>
+      <h2>{{product.nome}}</h2>
+      <br/>
+      Descricao: {{product.desc}}
+      <br/>
+      Preco: {{product.preco}}
+      <br/>
+      <br/>
+      <button [routerLink]="['/product-edit', product.id]">Editar</button>
+      <button (click)="deleteProduct(product.id)">Deletar</button>
+</div>

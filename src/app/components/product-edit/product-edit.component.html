@@ -1,0 +1,17 @@
+<div>
+  <div *ngIf="isLoadingResults">
+    Carregando...
+  </div>
+  <div>
+    <button [routerLink]="['/products']">listar</button>
+  </div>
+    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+        Nome: <input formControlName="prodNome" [value]="product.nome"><br/>
+        Desc: <input formControlName="prodDesc" [value]="product.desc"><br/>
+        Preco: <input formControlName="prodPreco" [value]="product.preco"><br/>
+        <br/>
+        <div>
+            <button type="submit" >Salvar</button>
+        </div>
+    </form>
+</div>
